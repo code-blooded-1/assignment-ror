@@ -1,4 +1,16 @@
 class User < ApplicationRecord
     has_secure_password
+    
+    validates :first_name, length: { minimum: 3, maximum: 30 }
+    validates :last_name, length: { minimum: 3, maximum: 30 }
+    validates :email, presence: true
     validates :email, uniqueness: true
+
+    before_validation :trim_data
+
+    def trim_data
+        self.first_name = first_name.strip
+        self.last_name = last_name.strip
+        self.email = email.strip
+    end
 end
