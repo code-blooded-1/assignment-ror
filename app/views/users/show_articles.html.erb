@@ -1,0 +1,8 @@
+<%= "#{@user.first_name}'s articles" %>
+<br />
+<% @articles.each do |article| %>
+    <%= render article %>
+    <p>
+      <%= link_to "Show this article", article %>
+    </p>
+<% end %>
