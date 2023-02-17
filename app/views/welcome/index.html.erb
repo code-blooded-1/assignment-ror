@@ -1,2 +1,8 @@
 <h1>Welcome to homepage</h1>
-
+<% if logged_in? %>
+    <%= "Logged in as #{current_user.first_name} #{current_user.last_name}" %>
+    <br />
+    <%= link_to "Logout", logout_path, method: :delete, data: { turbo_method: :delete} %>
+<% else %>
+    <%= link_to "Login", login_path %>
+<% end %>
