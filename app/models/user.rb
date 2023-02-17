@@ -1,5 +1,6 @@
 class User < ApplicationRecord
     has_secure_password
+    has_many :articles
     
     validates :first_name, length: { minimum: 3, maximum: 30 }
     validates :last_name, length: { minimum: 3, maximum: 30 }
