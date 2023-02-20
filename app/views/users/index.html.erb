@@ -5,9 +5,11 @@
     <ol>
         <% @users.each do |user| %>
             <li>
+                <%= render "common/profile_image", obj: user, locals: { style: "height: 50px; width: 50px; border-radius: 50%" } %> |
                 <%= user.first_name + " " + user.last_name %> | 
                 <%= link_to "Show profile", profile_path(user) %>
             </li>
+            <br />
         <% end %>
     </ol>
 </div>

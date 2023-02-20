@@ -1,0 +1,6 @@
+<% avatar_url = obj.avatar.present? ? 
+                obj.avatar
+                :
+                "https://ui-avatars.com/api/?name=#{obj.first_name}+#{obj.last_name}"
+%>
+<img src=<%= avatar_url %> style="<%= locals[:style] %>" />

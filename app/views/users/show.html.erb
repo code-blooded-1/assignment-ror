@@ -1,5 +1,10 @@
 <h3>
 <%= "#{@user.first_name} #{@user.last_name}'s profile" %>
+
+<div style="text-align: center; margin-top: 1rem">
+    <%= render "common/profile_image", obj: @user, locals: { style: "height: 200px; width: 200px; border-radius: 50%" } %>
+</div>
+
 </h3>
 <div>
     <strong> First name: </strong>

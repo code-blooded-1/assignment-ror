@@ -8,6 +8,8 @@ class User < ApplicationRecord
     validates :email, uniqueness: true
     validates :age, numericality: { in: 5..150 }
 
+    mount_uploader :avatar, AvatarUploader
+
     before_validation :trim_data
 
     def trim_data

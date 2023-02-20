@@ -28,6 +28,11 @@
       <%= form.label :age, style: "display: block" %>
       <%= form.number_field :age %>
     </div>
+    
+    <div>
+      <%= form.label :avatar, style: "display: block" %>
+      <%= form.file_field :avatar %>
+    </div>
   
     <div>
       <%= form.submit "Update Profile" %>
