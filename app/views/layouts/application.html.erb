@@ -17,12 +17,7 @@
       <%= msg %> 
     </p>
   <% end %>
-    <%= link_to "Home", root_path %> | 
-    <%= link_to "Articles", articles_path %> | 
-    <%= link_to "View Profile", profile_path %>
-    <br />
-    <hr />
-    <br />
+  <%= render "common/navbar" %>
     <%= yield %>
   </body>
 </html>
