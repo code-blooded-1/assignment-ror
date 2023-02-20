@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
   private
     def redirect_if_user_logged_in
         if logged_in?
-            redirect_to profile_path
+            redirect_to profile_path(current_user)
         end
     end
 end

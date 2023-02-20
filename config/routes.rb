@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get 'edit_profile' => "users#edit_profile", as: :edit_profile
   patch 'edit_profile' => "users#update_profile", as: :update_profile
   
-  get 'users' => "users#index", as: :list_users
+  get 'users' => "users#index", as: :user
   get 'user/:id' => "users#show", as: :profile
   get 'user/:id/articles' => "users#show_articles"
 
