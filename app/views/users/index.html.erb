@@ -1,0 +1,13 @@
+<h2>All users list</h2>
+
+<%= render "common/pagination" %>
+<div id="articles">
+    <ol>
+        <% @users.each do |user| %>
+            <li>
+                <%= user.first_name + " " + user.last_name %> | 
+                <%= link_to "Show profile", profile_path(user) %>
+            </li>
+        <% end %>
+    </ol>
+</div>

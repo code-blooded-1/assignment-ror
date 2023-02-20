@@ -1,5 +1,11 @@
 <nav>
     <%= link_to "Home", root_path %> |  
     <%= link_to "Articles", articles_path %> | 
-    <%= link_to "View Profile", profile_path %>
+    <%= link_to "Users", list_users_path %> | 
+    <% if(current_user) %>
+        <%= link_to "View Profile", profile_path(current_user) %> | 
+        <%= link_to "Logout", logout_path, method: :delete, data: { turbo_method: :delete} %>
+    <% else %>
+        <%= link_to "Login", login_path %> 
+    <% end %>
 </nav>
