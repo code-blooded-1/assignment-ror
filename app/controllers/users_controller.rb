@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :redirect_if_user_logged_in, only: :new
-  before_action :require_user, only: :profile
+  before_action :require_user, only: [:profile, :edit_profile]
 
   def new
     @user = User.new
@@ -22,6 +22,20 @@ class UsersController < ApplicationController
   def show_articles
     @user = User.find(params[:id])
     @articles = @user.articles
+  end
+
+  def edit_profile
+    @user = current_user
+  end
+
+  def update_profile
+    @user = current_user
+    if @user.update(params.require(:user).permit(:first_name, :last_name))
+      flash[:notice] = "Profile Updated successfully"
+      redirect_to profile_path
+    else
+      render 'edit_profile', status: :unprocessable_entity
+    end
   end
 
   private

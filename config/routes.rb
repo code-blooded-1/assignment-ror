@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   delete 'logout' => 'sessions#destroy'
 
   get 'profile' => "users#profile", as: :profile
+  get 'edit_profile' => "users#edit_profile", as: :edit_profile
+  patch 'edit_profile' => "users#update_profile", as: :update_profile
   get 'user/:id/articles' => "users#show_articles"
 
   root "welcome#index"

@@ -1,0 +1,17 @@
+<h1>Edit Profile</h1>
+
+<%= form_with(scope: :user, url: update_profile_path, method: :PATCH) do |form| %>
+    <div>
+      <%= form.label :first_name, style: "display: block" %>
+      <%= form.text_field :first_name %>
+    </div>
+    
+    <div>
+      <%= form.label :last_name, style: "display: block" %>
+      <%= form.text_field :last_name %>
+    </div>
+  
+    <div>
+      <%= form.submit "Update Profile" %>
+    </div>
+<% end %>
