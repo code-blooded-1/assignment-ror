@@ -35,9 +35,9 @@ class UsersController < ApplicationController
 
   def update_profile
     @user = current_user
-    if @user.update(params.require(:user).permit(:first_name, :last_name))
+    if @user.update(params.require(:user).permit(:first_name, :last_name, :age))
       flash[:notice] = "Profile Updated successfully"
-      redirect_to profile_path
+      redirect_to profile_path(@user)
     else
       render 'edit_profile', status: :unprocessable_entity
     end

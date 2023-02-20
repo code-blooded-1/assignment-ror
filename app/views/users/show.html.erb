@@ -13,6 +13,10 @@
     <strong> email: </strong>
     <%= @user.email %>
 </div>
+<div>
+    <strong> age: </strong>
+    <%= @user.age == nil ? "Not updated by user" : @user.age %>
+</div>
 
 <hr />
 <% if current_user == @user %>
