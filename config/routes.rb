@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   
   get 'users' => "users#index", as: :user
   get 'user/:id' => "users#show", as: :profile
-  get 'user/:id/articles' => "users#show_articles"
+  get 'user/:id/articles' => "users#show_articles", as: :show_articles
 
   root "welcome#index"
 end

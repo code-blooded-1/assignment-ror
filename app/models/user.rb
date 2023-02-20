@@ -6,7 +6,7 @@ class User < ApplicationRecord
     validates :last_name, length: { minimum: 3, maximum: 30 }
     validates :email, presence: true
     validates :email, uniqueness: true
-    validates :age, numericality: { in: 5..150 }
+    validates :age, numericality: { in: 5..150 },:allow_nil => true
 
     mount_uploader :avatar, AvatarUploader
 

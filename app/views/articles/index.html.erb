@@ -3,12 +3,16 @@
 <h1>Articles</h1>
 <%= render "common/pagination" %>
 <div id="articles">
-  <% @articles.each do |article| %>
-    <%= render article %>
-    <p>
-      <%= link_to "Show this article", article %>
-    </p>
-  <% end %>
+  <ol>
+    <% @articles.each do |article| %>
+      <li>
+      <%= render article %>
+        <p>
+          <%= link_to "Show this article", article %>
+        </p>
+      </li>
+    <% end %>
+  </ol>
 </div>
 
 <%= link_to "New article", new_article_path %>
