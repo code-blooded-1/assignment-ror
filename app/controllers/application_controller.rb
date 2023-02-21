@@ -16,4 +16,9 @@ class ApplicationController < ActionController::Base
           redirect_to login_path
         end
     end
+
+    def destroy_session
+        session[:user_id] = nil
+    end
+    
 end

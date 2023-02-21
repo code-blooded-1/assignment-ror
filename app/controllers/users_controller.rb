@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :redirect_if_user_logged_in, only: :new
-  before_action :require_user, only: [:profile, :edit_profile]
+  before_action :require_user, only: [:profile, :edit_profile, :delete_profile]
 
   def new
     @user = User.new
@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.paginate(page: params[:page], per_page: 2)
-  end
+end
 
   def create
     @user = User.new(user_params)
@@ -41,6 +41,13 @@ class UsersController < ApplicationController
     else
       render 'edit_profile', status: :unprocessable_entity
     end
+  end
+
+  def delete_profile
+    @user = current_user
+    @user.destroy
+    destroy_session
+    redirect_to root_path
   end
 
   private

@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   # routes which needs authentication
   get 'edit_profile' => "users#edit_profile", as: :edit_profile
   patch 'edit_profile' => "users#update_profile", as: :update_profile
+  delete 'delete_profile' => "users#delete_profile", as: :delete_profile
   
   get 'users' => "users#index", as: :user
   get 'user/:id' => "users#show", as: :profile

@@ -26,5 +26,6 @@
 <hr />
 <% if current_user == @user %>
 <%= link_to "Edit Profile", edit_profile_path %> 
+<%= link_to "Delete Profile", delete_profile_path, method: :delete, data: { turbo_method: :delete} %> 
 <% end %>
 <%= link_to "Show user articles", show_articles_path(@user) %>
